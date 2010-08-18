@@ -1,0 +1,27 @@
+Audiobar uses the excellent Flash MP3 player called... Flash MP3 Player.
+
+For playlist support, a short modification to the source code has been done.
+
+To reproduce it, first download the source:
+
+  http://code.google.com/p/mp3player/downloads/detail?name=template_maxi_0.6.0.zip&can=2&q=
+
+And add the following line
+
+  getURL("javascript:next_song()");
+
+After line 69, so the function now looks like this:
+
+	private function _soundComplete()
+	{
+		this.stop();
+		if (this.loop) {
+			this.play();
+		}
+
+		// Modification for audiobar
+		getURL("javascript:next_song()");
+	}
+
+Carlo Capocasa
+http://dev.carlocapocasa.com
