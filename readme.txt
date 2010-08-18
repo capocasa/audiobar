@@ -1,4 +1,4 @@
-=== Akismet ===
+=== Audiobar ===
 Contributors: carlocapocasa
 Tags: audio,player,play,mp3,ogg,flac,wav,vorbis,html 5
 Requires at least: 3.0
@@ -35,5 +35,7 @@ Features:
 Download and install plugin, then activate.
 
 == Changelog ==
-0.9 Initial beta release. Works great for me, need feedback for other WordPress configurations.
+
+= 0.9 =
+Initial beta release
 
