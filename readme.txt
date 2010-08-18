@@ -11,6 +11,8 @@ Audiobar is a stylish audio player bar that continues playing when visitors brow
 
 Audiobar is a stylish audio player bar that continues playing when visitors browse.
 
+Audiobar is in beta. You can actively help to make it stable by reporting problems to carlo@carlocapocasa.com.
+
 Features:
 
 * Works great and looks sharp in all current browsers
