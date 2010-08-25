@@ -41,11 +41,12 @@ require(audiobar_get_template('audiobar-settings.php'));
  * @param int days Days to cache for
  */
 function cache_for($days) {
-return;
   $seconds = $days * 86400;
 	header('Expires: ' . date('D, d M Y H:i:s',time()+$seconds) . ' GMT');
 	header("Cache-Control: max-age=$seconds");
-  header_remove('Pragma');
+  if (function_exists('header_remove')) {
+    header_remove('Pragma');
+  }
 }
 
 

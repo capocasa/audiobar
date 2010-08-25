@@ -3,7 +3,9 @@
 	// Make sure it only gets loaded once.
 function cache_for($days) {
   $seconds = $days * 86400;
-  header_remove('Pragma');
+  if (function_exists('header_remove')) {
+    header_remove('Pragma');
+  }
 	header('Expires: ' . date('D, d M Y H:i:s',time()+$seconds) . ' GMT');
 	header("Cache-Control: max-age=$seconds");
 }
