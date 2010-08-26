@@ -36,6 +36,9 @@ Download and install plugin, then activate.
 
 == Changelog ==
 
+= 0.9.2 =
+* No longer lose plugin settings on upgrade
+
 = 0.9.1 =
 * Fixed JavaScript error caused by using PHP 5.3 specific function.
 
@@ -43,6 +46,9 @@ Download and install plugin, then activate.
 Initial beta release
 
 == Upgrade Notice ==
+
+= 0.9.2 =
+Fixed losing plugin configuration on deactivation. You will need to re-enter your configuration once after this upgrade.
 
 = 0.9.1 =
 Fixed playlist support
