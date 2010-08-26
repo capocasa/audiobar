@@ -1,6 +1,6 @@
 === Audiobar ===
 Contributors: carlocapocasa
-Tags: audio,player,play,mp3,ogg,flac,wav,vorbis,html 5
+Tags: audio,player,play,mp3,ogg,flac,wav,vorbis,html5,html 5
 Requires at least: 3.0
 Tested up to: 3.0
 Stable tag: 0.9
@@ -36,6 +36,14 @@ Download and install plugin, then activate.
 
 == Changelog ==
 
+= 0.9.1 =
+* Fixed JavaScript error caused by using PHP 5.3 specific function.
+
 = 0.9 =
 Initial beta release
+
+== Upgrade Notice ==
+
+= 0.9.1 =
+Fixed playlist support
 
