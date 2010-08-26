@@ -349,7 +349,6 @@ register_activation_hook(__FILE__, 'audiobar_activation');
  * Remove plugin data on deactivation
  */
 function audiobar_deactivation() {
-  include(ABSPATH.'/wp-content/plugins/audiobar/audiobar-default-settings.php');
   add_htaccess_rules(true);
 }
 register_deactivation_hook(__FILE__, 'audiobar_deactivation');
