@@ -3,7 +3,7 @@
 Plugin Name: Audiobar
 Plugin URI: http://carlocapocasa.com/tech/audiobar
 Description: Audiobar is a stylish audio player bar that continues playing when visitors browse.
-Version: 0.9 beta
+Version: 0.9.2 beta
 Author: Carlo Capocasa
 Author URI: http://carlocapocasa.com
 License: GPL2
@@ -350,11 +350,6 @@ register_activation_hook(__FILE__, 'audiobar_activation');
  */
 function audiobar_deactivation() {
   include(ABSPATH.'/wp-content/plugins/audiobar/audiobar-default-settings.php');
-  foreach($audiobar_default_colors as $key => $value) {
-    delete_option($key);
-  }
-  delete_option('audiobar_disable_backlink');
-  delete_option('audiobar_position');
   add_htaccess_rules(true);
 }
 register_deactivation_hook(__FILE__, 'audiobar_deactivation');
