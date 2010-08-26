@@ -3,7 +3,7 @@ Contributors: carlocapocasa
 Tags: audio,player,play,mp3,ogg,flac,wav,vorbis,html5,html 5
 Requires at least: 3.0
 Tested up to: 3.0
-Stable tag: 0.9
+Stable tag: 0.9.1
 
 Audiobar is a stylish audio player bar that continues playing when visitors browse.
 
