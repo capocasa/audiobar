@@ -3,7 +3,7 @@ Contributors: carlocapocasa
 Tags: audio,player,play,mp3,ogg,flac,wav,vorbis,html5,html 5
 Requires at least: 3.0
 Tested up to: 3.0
-Stable tag: 0.9.2
+Stable tag: 0.9.3
 
 Audiobar is a stylish audio player bar that continues playing when visitors browse.
 
@@ -33,9 +33,12 @@ Features:
 
 == Installation ==
 1. Download and install plugin, then activate.
-2. Place at least one MP3 file somewhere on your front page.
+2. Edit a page or post that will show on your front page, then upload and link to at least one MP3 file
 
 == Changelog ==
+
+= 0.9.3 =
+* Improve handling when there is no MP3 file on the front page to load
 
 = 0.9.2 =
 * No longer lose plugin settings on upgrade
@@ -47,6 +50,9 @@ Features:
 Initial beta release
 
 == Upgrade Notice ==
+
+= 0.9.3 =
+* Improved handling when there is no MP3 file on the front page to load. Upgrade optional.
 
 = 0.9.2 =
 Fixed losing plugin configuration on deactivation. You will need to re-enter your configuration once after this upgrade.

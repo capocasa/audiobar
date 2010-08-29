@@ -3,7 +3,7 @@
 Plugin Name: Audiobar
 Plugin URI: http://carlocapocasa.com/tech/audiobar
 Description: Audiobar is a stylish audio player bar that continues playing when visitors browse.
-Version: 0.9.2 beta
+Version: 0.9.3 beta
 Author: Carlo Capocasa
 Author URI: http://carlocapocasa.com
 License: GPL2
@@ -78,7 +78,7 @@ function audiobar_container() {
 	$audiobar_seo_content = ob_get_contents();
 	ob_end_clean();
 
-  $play_url = get_bloginfo( 'url' ) .'/?audiobar=bar&play=' . urlencode($audiobar_first_base) .'&title=' . urlencode($audiobar_first_title) . (in_array('oga', $audiobar_first_extensions) ? '&altogg=1' : '');
+  $play_url = get_bloginfo( 'url' ) .'/?audiobar=bar&play=' . urlencode(in_array('mp3', $audiobar_first_extensions) ? $audiobar_first_base : '') .'&title=' . urlencode($audiobar_first_title) . (in_array('oga', $audiobar_first_extensions) ? '&altogg=1' : '');
   $content_url = get_bloginfo( 'url') . '/?' . AUDIOBAR_FRAMEPARAMETER;
 
 	ob_start();
@@ -122,7 +122,7 @@ function audiobar_bar( $wp_query ) {
 	$play = $_GET['play'];
 	if ($play == '') {
 	  // No URL lets FF audio player disappear
-	  // A false URL doesn't work, but still shows the player
+	  // With an MP3 and OGG containing silence, the player is there
 	  $play = '/wp-content/plugins/audiobar/assets/audiobar-silence';
 	  $title = '--';
 	}
