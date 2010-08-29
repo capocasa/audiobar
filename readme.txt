@@ -32,7 +32,8 @@ Features:
 5. Audiobar in Safari 5
 
 == Installation ==
-Download and install plugin, then activate.
+1. Download and install plugin, then activate.
+2. Place at least one MP3 file somewhere on your front page.
 
 == Changelog ==
 

@@ -120,6 +120,12 @@ function audiobar_bar( $wp_query ) {
 	$autoplay = isset($_GET['autoplay']) ? $_GET['autoplay'] : 0;
 	$title = $_GET['title'];
 	$play = $_GET['play'];
+	if ($play == '') {
+	  // No URL lets FF audio player disappear
+	  // A false URL doesn't work, but still shows the player
+	  $play = '/wp-content/plugins/audiobar/assets/audiobar-silence';
+	  $title = '--';
+	}
 	$swf = get_bloginfo( 'wpurl' ) . '/wp-content/plugins/audiobar/assets/player_mp3_maxi.swf';
   $forceflash = isset($_GET['forceflash']);
   $altogg = isset($_GET['altogg']);
@@ -168,7 +174,7 @@ add_action('the_content', 'audiobar_replace_audio_links');
  */
 $audiobar_first_page = null;
 $audiobar_first_title = null;
-$audiobar_first_extensions = null;
+$audiobar_first_extensions = array();
 
 /**
  * Callback function for audiobar_replace_audio_links, replaces a single link

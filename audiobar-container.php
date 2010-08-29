@@ -143,6 +143,9 @@
 		},
 		should_force_flash: function (extensions) {
 		  // Force flash if the browser needs ogg and no ogg is provided
+		  if (extensions.length == 0) {
+		    return false;
+		  }
 		  for (var i = 0; i < extensions.length; i++) {
 		    if (extensions[i] == 'ogg' || extensions[i] == 'oga') {
 		      return false;
