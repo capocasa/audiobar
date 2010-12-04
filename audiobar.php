@@ -57,8 +57,11 @@ function cache_for($days) {
  */
 function audiobar_container() {
 
-  if (!WP_DEBUG) {
-    cache_for(3);
+  // If you just try audiobar, you don't want the Iframe wrapper in audiobar's cache yet
+  $only_just_installed = filemtime(__FILE__) + 86400 > time();
+
+  if (!WP_DEBUG && !$only_just_installed) {
+    cache_for(3); // We can have hope that 3 days of is an acceptable compromise for SEO only content
   }
 
 	$url = (!empty($_SERVER['HTTPS'])) ? "https://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'] : "http://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
