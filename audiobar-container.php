@@ -22,10 +22,13 @@
 	<?php echo $meta_tags // include meta tags from template header ?>
 </head>
 <body>
+
 <?php if (get_option('audiobar_position') == 'top'): ?>
 <iframe id="iframe_play" name="play" frameborder="0" src="<?php echo $play_url ?>"></iframe>
 <?php endif; ?>
+
 <iframe id="iframe_content" name="content" frameborder="0" src="<?php echo $content_url ?>" >
+
 <?php echo $audiobar_altcontent ?>
 </iframe>
 <?php if (get_option('audiobar_position') == 'bottom'): ?>

@@ -37,6 +37,10 @@ Features:
 
 == Changelog ==
 
+= 0.9.4 =
+* Audiobar doesn't start caching until a day after installation. No need to clear browser cache if you're just trying out audiobar.
+* Wide song title don't wrap.
+
 = 0.9.3 =
 * Improve handling when there is no MP3 file on the front page to load
 
@@ -50,6 +54,9 @@ Features:
 Initial beta release
 
 == Upgrade Notice ==
+
+= 0.9.4 =
+* Long song titles display properly. Upgrade optional.
 
 = 0.9.3 =
 * Improved handling when there is no MP3 file on the front page to load. Upgrade optional.

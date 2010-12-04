@@ -56,7 +56,7 @@ div.songtitle {
 	position: absolute;
 	font-weight: bold;
 	font-style: italic;
-	width: 227px
+	width: 100%;
 }
 a.backlink {
   display: block;
