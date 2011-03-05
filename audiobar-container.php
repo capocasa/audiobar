@@ -106,13 +106,19 @@
 				var n = window.location.href.indexOf('#');
 				if (n != -1) {
 					var newUrl = window.location.href;
-					newUrl = newUrl.substr(0,n)+newUrl.substr(n+2);
+          var frag = newUrl.substr(n+2);
+			    var m = frag.indexOf('!');
+          if (m != -1) {
+  					frag = frag.substr(0,m)+'#'+frag.substr(m+1);
+          }
+					newUrl = newUrl.substr(0,n)+frag;
 					if (newUrl.substr(n) == '') {
 					  newUrl += '?'+audiobar.param;
 					}
-			    if (newUrl.substr(-1) != '/') {
-			      newUrl += '/';
-			    }
+
+//			    if (newUrl.substr(-1) != '/') {
+//			      newUrl += '/';
+//			    }
 
 					audiobar.suspend_poll = true;
 					if (audiobar.ie) {
@@ -132,7 +138,12 @@
 				var newUrl = window.content.location.href;
 				audiobar.contentHref = newUrl;
 				var n = audiobar.wpurl.length;
-				newUrl = newUrl.substr(0, n) + '/#' + newUrl.substr(n);
+				var frag = newUrl.substr(n);
+		    var m = frag.indexOf('#');
+        if (m != -1) {
+					frag = frag.substr(0,m)+'!'+frag.substr(m+1);
+        }
+				newUrl = newUrl.substr(0, n) + '/#' + frag;
 				n = newUrl.indexOf(audiobar.param);
 				if (n != -1) {
 				  newUrl = newUrl.substr(0, n-1);
