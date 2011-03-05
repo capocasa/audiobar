@@ -56,14 +56,6 @@ function cache_for($days) {
  * @return string Modified home URL
  */
 function audiobar_container() {
-
-  // If you just try audiobar, you don't want the Iframe wrapper in audiobar's cache yet
-  $only_just_installed = filemtime(__FILE__) + 86400 > time();
-
-  if (!WP_DEBUG && !$only_just_installed) {
-    cache_for(3); // We can have hope that 3 days of is an acceptable compromise for SEO only content
-  }
-
 	$url = (!empty($_SERVER['HTTPS'])) ? "https://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'] : "http://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
 
 	if (rtrim($url, '/') != rtrim(get_bloginfo('url'), '/') || isset($_GET[AUDIOBAR_FRAMEPARAMETER]) || false !== strpos( $_SERVER['REQUEST_URI'], AUDIOBAR_FRAMEPARAMETER )) {
@@ -82,6 +74,7 @@ function audiobar_container() {
 	ob_end_clean();
 
   $play_url = get_bloginfo( 'url' ) .'/?audiobar=bar&play=' . urlencode(in_array('mp3', $audiobar_first_extensions) ? $audiobar_first_base : '') .'&title=' . urlencode($audiobar_first_title) . (in_array('oga', $audiobar_first_extensions) ? '&altogg=1' : '');
+
   $content_url = get_bloginfo( 'url') . '/?' . AUDIOBAR_FRAMEPARAMETER;
 
 	ob_start();
@@ -112,15 +105,12 @@ add_action('template_redirect', 'audiobar_container');
  */
 function audiobar_bar( $wp_query ) {
 
-  if (!WP_DEBUG) {
-    cache_for(3);
-  }
-
 	if ( !isset($_GET['audiobar']) && 'bar' != $_GET['audiobar'] ) {
 		return;
 	}
 
 	$autoplay = isset($_GET['autoplay']) ? $_GET['autoplay'] : 0;
+
 	$title = $_GET['title'];
 	$play = $_GET['play'];
 	if ($play == '') {
@@ -138,6 +128,7 @@ function audiobar_bar( $wp_query ) {
   foreach ($audiobar_default_colors as $key => $value) {
     $$key = get_option($key); // Set template variables
   }
+
 	include(audiobar_get_template('audiobar-bar.php'));
 	die();
 }
@@ -350,6 +341,7 @@ function audiobar_activation() {
   }
   add_option('audiobar_disable_backlink', 0, '', 'yes');
   add_option('audiobar_position', 'top', '', 'yes');
+  add_option('audiobar_autoplay', 0, '', 'yes');
   add_htaccess_rules();
 }
 register_activation_hook(__FILE__, 'audiobar_activation');

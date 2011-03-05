@@ -2,8 +2,8 @@
 Contributors: carlocapocasa
 Tags: audio,player,play,mp3,ogg,flac,wav,vorbis,html5,html 5
 Requires at least: 3.0
-Tested up to: 3.0
-Stable tag: 0.9.3
+Tested up to: 3.1
+Stable tag: 0.9.4
 
 Audiobar is a stylish audio player bar that continues playing when visitors browse.
 
@@ -38,8 +38,9 @@ Features:
 == Changelog ==
 
 = 0.9.4 =
-* Audiobar doesn't start caching until a day after installation. No need to clear browser cache if you're just trying out audiobar.
-* Wide song title don't wrap.
+* No more problems when plugins use a # in URLs
+* Bar doesn't stick around any more on de-activation
+* Long song titles look good now
 
 = 0.9.3 =
 * Improve handling when there is no MP3 file on the front page to load
@@ -56,7 +57,7 @@ Initial beta release
 == Upgrade Notice ==
 
 = 0.9.4 =
-* Long song titles display properly. Upgrade optional.
+* Works better with other plugins, long song titles don't wrap. Upgrade recommended if there were problems with other plugins.
 
 = 0.9.3 =
 * Improved handling when there is no MP3 file on the front page to load. Upgrade optional.
