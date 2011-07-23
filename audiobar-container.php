@@ -23,6 +23,12 @@
 </head>
 <body>
 
+<!--[if IE 9]>
+<script type="text/javascript">
+ie9 = true;
+</script>
+<![endif]-->
+
 <?php if (get_option('audiobar_position') == 'top'): ?>
 <iframe id="iframe_play" name="play" frameborder="0" src="<?php echo $play_url ?>"></iframe>
 <?php endif; ?>
@@ -159,7 +165,10 @@
       var a = document.createElement('audio');
 		  
       // Force flash for so-so audio tag implentations
-      //return true;
+      if (ie9) {
+        return true;
+      }
+
       // Force flash if the browser needs ogg and no ogg is provided
 		  if (extensions.length == 0) {
 		    return false;
