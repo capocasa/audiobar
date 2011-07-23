@@ -3,7 +3,7 @@
 Plugin Name: Audiobar
 Plugin URI: http://carlocapocasa.com/tech/audiobar
 Description: Audiobar is a stylish audio player bar that continues playing when visitors browse.
-Version: 0.9.3 beta
+Version: 1.0
 Author: Carlo Capocasa
 Author URI: http://carlocapocasa.com
 License: GPL2

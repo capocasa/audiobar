@@ -1,5 +1,3 @@
-<?php
-?>
 <style type="text/css">
 
 span.audiobar_container {
@@ -41,7 +39,6 @@ a.audiobar_download {
 	font-weight: bold;
 	background: -webkit-gradient(linear, left top, left bottom, from(<?php echo $audiobar_button_gradient_1 ?>), to(<?php echo $audiobar_button_gradient_2 ?>));
 	background: -moz-linear-gradient(top,  <?php echo $audiobar_button_gradient_1 ?>,  <?php echo $audiobar_button_gradient_2 ?>);
-	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='<?php echo $audiobar_button_gradient_1 ?>', endColorstr='<?php echo $audiobar_button_gradient_2 ?>');
 	display: inline-block;
 	margin-bottom: 4px;
 }
@@ -50,7 +47,6 @@ a.audiobar_play:hover {
 	background: <?php echo $audiobar_button_hilite_gradient_1 ?>;
 	background: -webkit-gradient(linear, left top, left bottom, from(<?php echo $audiobar_button_hilite_gradient_1 ?>), to(<?php echo $audiobar_button_hilite_gradient_2 ?>));
 	background: -moz-linear-gradient(top,  <?php echo $audiobar_button_hilite_gradient_1 ?>,  <?php echo $audiobar_button_hilite_gradient_2 ?>);
-	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='<?php echo $audiobar_button_hilite_gradient_1 ?>', endColorstr='<?php echo $audiobar_button_hilite_gradient_2 ?>');
 }
 a.audiobar_downloadtext {
 	color:#666666;
@@ -92,4 +88,17 @@ div.audiobar_restore_notice {
 }
 
 </style>
+
+<!--[if lte IE 8.0]>
+<style>
+a.audiobar_play,
+a.audiobar_download {
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='<?php echo $audiobar_button_gradient_1 ?>', endColorstr='<?php echo $audiobar_button_gradient_2 ?>');
+}
+a.audiobar_play,
+a.audiobar_download {	
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='<?php echo $audiobar_button_hilite_gradient_1 ?>', endColorstr='<?php echo $audiobar_button_hilite_gradient_2 ?>');
+}
+</style>
+<![endif]-->
 

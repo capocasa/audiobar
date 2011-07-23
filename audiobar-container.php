@@ -156,7 +156,11 @@
 			}
 		},
 		should_force_flash: function (extensions) {
-		  // Force flash if the browser needs ogg and no ogg is provided
+      var a = document.createElement('audio');
+		  
+      // Force flash for so-so audio tag implentations
+      //return true;
+      // Force flash if the browser needs ogg and no ogg is provided
 		  if (extensions.length == 0) {
 		    return false;
 		  }
@@ -165,7 +169,6 @@
 		      return false;
 		    }
 		  }
-		  var a = document.createElement('audio');
 		  if (a.canPlayType && a.canPlayType('audio/mp3')) {
 		    return false;
 		  }
