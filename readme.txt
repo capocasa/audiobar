@@ -2,8 +2,8 @@
 Contributors: carlocapocasa
 Tags: audio,player,play,mp3,ogg,flac,wav,vorbis,html5,html 5
 Requires at least: 3.0
-Tested up to: 3.1
-Stable tag: 0.9.4
+Tested up to: 3.2.1
+Stable tag: 1.0
 
 Audiobar is a stylish audio player bar that continues playing when visitors browse.
 
@@ -11,24 +11,25 @@ Audiobar is a stylish audio player bar that continues playing when visitors brow
 
 Audiobar is a stylish audio player bar that continues playing when visitors browse.
 
-Audiobar is in beta. You can actively help to make it stable by reporting problems to carlo@carlocapocasa.com.
-
 Features:
 
 * Works great and looks sharp in all current browsers
 * Song titles are read directly from the tracks
 * Convenient: Use the ordinary WordPress media library to upload
-* Simple playlist support
+* Loads and renders fast
+* Rock solid stable
 * Easily customizable colors
+* Plays nice with other plugins
+* Simple playlist support
 * Completely themable via HTML and CSS
-* Designed to work with any caching system
+* Works well with caching systems
 
 == Screenshots ==
 
-1. Audiobar in Firefox 3.6
-2. Audiobar in Chrome 5.0
-3. Audiobar in Opera 10.6
-4. Audiobar in Internet Explorer 8 (6 and 7 look alike)
+1. Audiobar in Firefox 5.0
+2. Audiobar in Chrome 12.0
+3. Audiobar in Opera 11.5
+4. Audiobar in Internet Explorer 9 (6, 7 and 9 look alike)
 5. Audiobar in Safari 5
 
 == Installation ==
@@ -36,6 +37,12 @@ Features:
 2. Edit a page or post that will show on your front page, then upload and link to at least one MP3 file
 
 == Changelog ==
+
+= 1.0 =
+* User feedback says it's stable
+* CSS fixes for FF5 and IE9
+* Force flash as player workaround for IE9
+* Updated screenshots
 
 = 0.9.4 =
 * No more problems when plugins use a # in URLs
@@ -55,6 +62,9 @@ Features:
 Initial beta release
 
 == Upgrade Notice ==
+
+= 1.0 =
+* First stable release! Tested & working in FF5, IE9 and Chrome 12. Upgrade recommended.
 
 = 0.9.4 =
 * Works better with other plugins, long song titles don't wrap. Upgrade recommended if there were problems with other plugins.
