@@ -165,7 +165,7 @@ ie9 = true;
       var a = document.createElement('audio');
 		  
       // Force flash for so-so audio tag implentations
-      if (ie9) {
+      if (window.ie9) {
         return true;
       }
 
