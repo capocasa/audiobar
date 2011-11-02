@@ -222,6 +222,21 @@ function audiobar_get_buttons( $base, $title, $extensions ) {
 }
 
 /**
+ * Initializes a getID3 object
+ */
+function audiobar_make_getid3() {
+  include_once(ABSPATH.'/wp-content/plugins/audiobar/lib/getid3/getid3.php');
+  include_once(ABSPATH.'/wp-content/plugins/audiobar/lib/getid3/extension.cache.mysql.php');
+  
+  global $table_prefix;
+
+  $getID3 = new getID3_cached_mysql(DB_HOST, DB_NAME, DB_USER, DB_PASSWORD, audiobar_get_cache_table());
+  
+  return $getID3;
+}
+
+
+/**
  * Retrieves the title meta tag for an audio file designated by a relative path
  *
  * @param string $relative Relative path of audio file
@@ -232,36 +247,19 @@ function audiobar_get_title( $base, $extensions, $fallback ) {
 
   $title = false;
 
+  $getID3 = audiobar_make_getid3();
+
   foreach ($extensions as $extension) {
 	  $abspath = ABSPATH.$base.'.'.$extension;
 	  if (!file_exists($abspath)) {
 	    continue;
 	  }
-	  if ( 'ogg' == $extension || 'oga' == $extension ) {
-		  include_once(ABSPATH.'/wp-content/plugins/audiobar/lib/classAudioFile.php');
-		  $af = new AudioFile();
-		  $af->wave_filename = $abspath;
-		  $af->ogginfo();
-		  $title = $af->vorbis_comment->TITLE;
-		  if (is_array($title)) {
-			  $title = $title[0];
-		  }
-	  } elseif ( 'flac' == $extension ) {
-		  include_once(ABSPATH.'/wp-content/plugins/audiobar/lib/flacTags.php');
-		  $ft = new flacTags($abspath);
-		  $ft->readTags();
-		  $title = $ft->getComment('TITLE');
-		  if (is_array($title)) {
-			  $title = $title[0];
-		  }
-	  } elseif ( 'mp3' == $extension ) {
-		  include_once(ABSPATH.'/wp-content/plugins/audiobar/lib/classAudioFile.php');
-		  $af = new AudioFile();
-		  $af->wave_filename = $abspath;
-		  $af->mp3info();
-		  $title = $af->id3_title;
-	  }
-	  if ($title !== false && $title != '') {
+    $fileinfo = $getID3->analyze($abspath);
+    getid3_lib::CopyTagsToComments($fileinfo);
+ 
+    $title = $fileinfo['comments_html']['title'][0];
+
+    if ($title != '') {
 	    return $title;
 	  }
 	}
@@ -342,7 +340,10 @@ function audiobar_activation() {
   add_option('audiobar_disable_backlink', 0, '', 'yes');
   add_option('audiobar_position', 'top', '', 'yes');
   add_option('audiobar_autoplay', 0, '', 'yes');
+  add_option('audiobar_cache_table', $audiobar_default_cache_table, '', 'yes');
   add_htaccess_rules();
+  $getID3 = audiobar_make_getid3();
+  $getID3->clear_cache();
 }
 register_activation_hook(__FILE__, 'audiobar_activation');
 
@@ -351,8 +352,23 @@ register_activation_hook(__FILE__, 'audiobar_activation');
  */
 function audiobar_deactivation() {
   add_htaccess_rules(true);
+  global $wpdb, $table_prefix;
+  $wpdb->query("DROP TABLE " . audiobar_get_cache_table());
+  delete_option('audiobar_cache_table');
 }
 register_deactivation_hook(__FILE__, 'audiobar_deactivation');
+
+/**
+ * Puts together the table Audiobar uses for caching
+ * extracted track information
+ *
+ * This table gets emptied and dropped, hence
+ * forced to start with $table_prefix . 'audiobar_' as a safety
+ */
+function audiobar_get_cache_table() {
+  global $table_prefix;
+  return $table_prefix . 'audiobar_' . get_option('audiobar_cache_table');
+}
 
 /**
  * Admin Menu

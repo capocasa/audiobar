@@ -11,3 +11,5 @@
 	  'audiobar_button_hilite_gradient_2' => '#008080',
   );
 
+  $audiobar_default_cache_table = 'cache';
+
