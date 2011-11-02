@@ -232,6 +232,8 @@ function audiobar_make_getid3() {
 
   $getID3 = new getID3_cached_mysql(DB_HOST, DB_NAME, DB_USER, DB_PASSWORD, audiobar_get_cache_table());
   
+#  $getID3 = new getID3;
+
   return $getID3;
 }
 
@@ -252,17 +254,19 @@ function audiobar_get_title( $base, $extensions, $fallback ) {
   foreach ($extensions as $extension) {
 	  $abspath = ABSPATH.$base.'.'.$extension;
 	  if (!file_exists($abspath)) {
-	    continue;
+      continue;
 	  }
+	  if (false !== strpos($abspath, "'")) var_dump ($abspath);
     $fileinfo = $getID3->analyze($abspath);
     getid3_lib::CopyTagsToComments($fileinfo);
  
     $title = $fileinfo['comments_html']['title'][0];
 
-    if ($title != '') {
-	    return $title;
+    if ($title == '') {
+      continue;
 	  }
-	}
+	  return $title;
+  }
 	return $fallback;
 }
 
