@@ -256,7 +256,6 @@ function audiobar_get_title( $base, $extensions, $fallback ) {
 	  if (!file_exists($abspath)) {
       continue;
 	  }
-	  if (false !== strpos($abspath, "'")) var_dump ($abspath);
     $fileinfo = $getID3->analyze($abspath);
     getid3_lib::CopyTagsToComments($fileinfo);
  
