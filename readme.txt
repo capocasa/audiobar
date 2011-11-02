@@ -29,7 +29,7 @@ Features:
 1. Audiobar in Firefox 5.0
 2. Audiobar in Chrome 12.0
 3. Audiobar in Opera 11.5
-4. Audiobar in Internet Explorer 9 (6, 7 and 9 look alike)
+4. Audiobar in Internet Explorer 8 (6, 7 and 9 look alike)
 5. Audiobar in Safari 5
 
 == Installation ==
