@@ -3,7 +3,7 @@ Contributors: carlocapocasa
 Tags: audio,player,play,mp3,ogg,flac,wav,vorbis,html5,html 5
 Requires at least: 3.0
 Tested up to: 3.2.1
-Stable tag: 1.0
+Stable tag: 1.0.1
 
 Audiobar is a stylish audio player bar that continues playing when visitors browse.
 
@@ -38,6 +38,10 @@ Features:
 
 == Changelog ==
 
+= 1.0.1
+* Extracting track titles more robust
+* Track title caching
+
 = 1.0 =
 * User feedback says it's stable
 * CSS fixes for FF5 and IE9
@@ -62,6 +66,9 @@ Features:
 Initial beta release
 
 == Upgrade Notice ==
+
+= 1.0.1 =
+* No longer chokes on certain MP3s, faster page loads. Upgrade recommended.
 
 = 1.0 =
 * First stable release! Tested & working in FF5, IE9 and Chrome 12. Upgrade recommended.
