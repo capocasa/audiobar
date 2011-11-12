@@ -1,6 +1,6 @@
 === Audiobar ===
 Contributors: carlocapocasa
-Tags: audio,player,play,mp3,ogg,flac,wav,vorbis,html5,html 5
+Tags: audio player,music player,mp3 player,ogg player,persistent music player,persistent audio player,persistent mp3 player,play,mp3,ogg,flac,wav,vorbis,html5,html 5
 Requires at least: 3.0
 Tested up to: 3.2.1
 Stable tag: 1.0.1
@@ -14,15 +14,15 @@ Audiobar is a stylish audio player bar that continues playing when visitors brow
 Features:
 
 * Works great and looks sharp in all current browsers
-* Song titles are read directly from the tracks
-* Convenient: Use the ordinary WordPress media library to upload
-* Loads and renders fast
+* Convenient: Upload with WordPress media library, track titles read from tracks
+* Performs: Lightweight, loads and displays fast, cachable
 * Rock solid stable
 * Easily customizable colors
 * Plays nice with other plugins
 * Simple playlist support
 * Completely themable via HTML and CSS
-* Works well with caching systems
+
+More info: http://carlocapocasa.com/tech/audiobar
 
 == Screenshots ==
 
@@ -38,7 +38,7 @@ Features:
 
 == Changelog ==
 
-= 1.0.1
+= 1.0.1 =
 * Extracting track titles more robust
 * Track title caching
 
@@ -84,4 +84,5 @@ Fixed losing plugin configuration on deactivation. You will need to re-enter you
 
 = 0.9.1 =
 Fixed playlist support
+
 
