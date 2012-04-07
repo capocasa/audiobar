@@ -105,7 +105,7 @@ add_action('template_redirect', 'audiobar_container');
  */
 function audiobar_bar( $wp_query ) {
 
-	if ( !isset($_GET['audiobar']) && 'bar' != $_GET['audiobar'] ) {
+	if ( !isset($_GET['audiobar']) || 'bar' != $_GET['audiobar'] ) {
 		return;
 	}
 
