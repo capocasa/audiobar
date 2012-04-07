@@ -44,5 +44,5 @@
 
 </form>
 </div>
-<script <small>Using this option</small>type="text/javascript" src="<?php echo get_bloginfo('wpurl') ?>/wp-content/plugins/audiobar/lib/jscolor/jscolor.js"></script>
+<script type="text/javascript" src="<?php echo get_bloginfo('wpurl') ?>/wp-content/plugins/audiobar/lib/jscolor/jscolor.js"></script>
 
