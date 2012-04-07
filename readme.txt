@@ -2,8 +2,8 @@
 Contributors: carlocapocasa
 Tags: audio player,music player,mp3 player,ogg player,persistent music player,persistent audio player,persistent mp3 player,play,mp3,ogg,flac,wav,vorbis,html5,html 5
 Requires at least: 3.0
-Tested up to: 3.2.1
-Stable tag: 1.0.1
+Tested up to: 3.3.1
+Stable tag: 1.0.2
 
 Audiobar is a stylish audio player bar that continues playing when visitors browse.
 
@@ -26,9 +26,9 @@ More info: http://carlocapocasa.com/tech/audiobar
 
 == Screenshots ==
 
-1. Audiobar in Firefox 5.0
-2. Audiobar in Chrome 12.0
-3. Audiobar in Opera 11.5
+1. Audiobar in Firefox 5.0 (11 looks alike)
+2. Audiobar in Chrome 12.0 (18 looks alike)
+3. Audiobar in Opera 11.5 (11.6 looks alike)
 4. Audiobar in Internet Explorer 8 (6, 7 and 9 look alike)
 5. Audiobar in Safari 5
 
@@ -37,6 +37,11 @@ More info: http://carlocapocasa.com/tech/audiobar
 2. Edit a page or post that will show on your front page, then upload and link to at least one MP3 file
 
 == Changelog ==
+
+= 1.0.2 =
+* Fixed broken color selection
+* Tested current browsers
+* Cleaned up a notice
 
 = 1.0.1 =
 * Extracting track titles more robust
