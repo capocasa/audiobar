@@ -73,6 +73,9 @@ Initial beta release
 
 == Upgrade Notice ==
 
+= 1.0.2 =
+* Fixed broken color selection and cleaned up some notices. Upgrade recommended.
+
 = 1.0.1 =
 * No longer chokes on certain MP3s, faster page loads. Upgrade recommended.
 
