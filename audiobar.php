@@ -34,7 +34,11 @@ define('AUDIOBAR_FRAMEPARAMETER', 'audiobar-home');
 /**
  * 
  */
-require(audiobar_get_template('audiobar-settings.php'));
+function audiobar_settings() {
+  require(audiobar_get_template('audiobar-settings.php'));
+}
+add_action('init', 'audiobar_settings');
+
 
 /**
  * Sets headers to cache for a number of days

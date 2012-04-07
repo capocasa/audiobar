@@ -41,7 +41,8 @@ More info: http://carlocapocasa.com/tech/audiobar
 = 1.0.2 =
 * Fixed broken color selection
 * Tested current browsers
-* Cleaned up a notice
+* Cleaned up notices
+* audiobar-settings.php changeable in theme
 
 = 1.0.1 =
 * Extracting track titles more robust
