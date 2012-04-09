@@ -35,7 +35,7 @@ ie9 = true;
 
 <iframe id="iframe_content" name="content" frameborder="0" src="<?php echo $content_url ?>" >
 
-<?php echo $audiobar_altcontent ?>
+<?php echo $audiobar_seo_content ?>
 </iframe>
 <?php if (get_option('audiobar_position') == 'bottom'): ?>
 <iframe id="iframe_play" name="play" frameborder="0" src="<?php echo $play_url ?>"></iframe>
