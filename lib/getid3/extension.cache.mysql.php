@@ -167,7 +167,7 @@ echo '.';
 			`filetime` INT(11) NOT NULL DEFAULT '0',
 			`analyzetime` INT(11) NOT NULL DEFAULT '0',
 			`value` TEXT NOT NULL,
-			PRIMARY KEY (`filename`,`filesize`,`filetime`)) TYPE=MyISAM", $this->connection);
+			PRIMARY KEY (`filename`,`filesize`,`filetime`)) ENGINE=MyISAM", $this->connection);
 		echo mysql_error($this->connection);
 	}
 }
