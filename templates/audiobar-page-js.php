@@ -1,11 +1,11 @@
 <script type="text/javascript">
 	(function () {
+  	var wpurl = '<?php echo get_bloginfo('wpurl') ?>';
     if (top.location == window.location) {
 	    // dom ready advice by Arnout Kazemier ( blog.3rd-Eden.com )
-      window.location.replace('<?php echo $url ?>');
+      window.location.replace(wpurl + '/#' + window.location.href.replace(wpurl, ''));
   	}
   	var links = document.getElementsByTagName('a');
-  	var wpurl = '<?php echo get_bloginfo('wpurl') ?>';
   	for (var i = 0; i < links.length; i++) {
   	  if (!links[i].target && links[i].href.indexOf(wpurl) == -1) {
   	    links[i].target = '_top';

@@ -281,12 +281,8 @@ function audiobar_get_title( $base, $extensions, $fallback ) {
  * @return string Modified home URL
  */
 function audiobar_page_js() {
-	$url = get_bloginfo('url');
-	$slug = str_replace($url, '', get_permalink());
-	if ( false === strpos( $slug, AUDIOBAR_FRAMEPARAMETER ) ) {
-		$url .= '/#' . $slug;
-	}
 	include(audiobar_get_template('audiobar-page-js.php'));
+
 }
 add_action('wp_footer', 'audiobar_page_js');
 
