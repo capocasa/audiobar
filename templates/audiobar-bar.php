@@ -106,7 +106,7 @@ function next_song() {
 		classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
 		type="application/x-shockwave-flash" 
 		codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0"
-		height="27" width="227" style="margin-top:0px;"><param name="movie" value="<?php echo $swf ?>"><param name="movie" value="<?php echo $swf ?>">
+		height="27" width="227" style="margin-top:0px;"><param name="movie" value="<?php echo $swf ?>">
 	<![endif]-->
 	<!--[if !IE]>-->
 	<object
