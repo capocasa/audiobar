@@ -63,7 +63,6 @@ function audiobar_container() {
 	$url = (!empty($_SERVER['HTTPS'])) ? "https://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'] : "http://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
 
 	if (rtrim($url, '/') != rtrim(get_bloginfo('url'), '/') || isset($_GET[AUDIOBAR_FRAMEPARAMETER]) || false !== strpos( $_SERVER['REQUEST_URI'], AUDIOBAR_FRAMEPARAMETER )) {
-    $_SERVER['REQUEST_URI'] = '/';
     unset( $_GET[AUDIOBAR_FRAMEPARAMETER] );
     unset( $_REQUEST[AUDIOBAR_FRAMEPARAMETER] );
 		return;
