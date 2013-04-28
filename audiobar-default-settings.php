@@ -13,3 +13,4 @@
 
   $audiobar_default_cache_table = 'cache';
 
+$loop = 1;
