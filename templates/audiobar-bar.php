@@ -95,7 +95,7 @@ function next_song() {
 <body onkeypress="return false;"><?php // prohibits key strokes to prevents accidental scrolling ?>
 <div class="player">
 <?php if (!$forceflash): ?>
-<audio id="audio" controls <?php echo $autoplay ? 'autobuffer autoplay' : '' ?> onended="next_song();"><source src="<?php echo get_bloginfo('wpurl') . $play ?>.<?php echo $altogg ? 'oga' : 'ogg' ?>?play" type="audio/ogg">
+<audio id="audio" controls <?php echo $loop ? 'loop' : ''  ?> <?php echo $autoplay ? 'autobuffer autoplay' : '' ?> onended="next_song();"><source src="<?php echo get_bloginfo('wpurl') . $play ?>.<?php echo $altogg ? 'oga' : 'ogg' ?>?play" type="audio/ogg">
   <source src="<?php echo get_bloginfo('wpurl') . $play ?>.mp3?play" type="audio/mp3"/>
   <!-- Flash fallback MP3 player by http://flash-mp3-player.net/ -->
 <?php endif; ?>
@@ -117,7 +117,7 @@ function next_song() {
 		width="227">
 	<!--<![endif]-->
 		<param name="wmode" value="transparent">
-		<param name="FlashVars" value="mp3=<?php echo audiobar_relative_wpurl() . $play ?>.mp3&amp;width=227&amp;height=27&amp;sliderovercolor=<?php echo substr($audiobar_hover_color, 1) ?>&amp;buttonovercolor=<?php echo substr($audiobar_hover_color, 1) ?>&amp;loadingcolor=<?php echo substr($audiobar_hover_color, 1) ?>&amp;autoplay=<?php echo $autoplay ? 1 : 0 ?>&amp;showvolume=1">
+		<param name="FlashVars" value="loop=<?php echo $loop ? 1 : 0 ?>&mp3=<?php echo audiobar_relative_wpurl() . $play ?>.mp3&amp;width=227&amp;height=27&amp;sliderovercolor=<?php echo substr($audiobar_hover_color, 1) ?>&amp;buttonovercolor=<?php echo substr($audiobar_hover_color, 1) ?>&amp;loadingcolor=<?php echo substr($audiobar_hover_color, 1) ?>&amp;autoplay=<?php echo $autoplay ? 1 : 0 ?>&amp;showvolume=1">
 	</object>
 	</div>
 <?php if (!$forceflash): ?>
